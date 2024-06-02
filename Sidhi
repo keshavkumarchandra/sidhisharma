@@ -1,0 +1,43 @@
+// Online Javascript Editor for free
+// Write, Edit and Run your Javascript code using JS Online Compiler
+
+// create a variable to hold your NFTs
+let nfts = [];
+
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function mintNFT(name, artist, year, description) {
+    const nft = {
+        name: name,
+        artist: artist,
+        year: year,
+        description: description
+    };
+    nfts.push(nft);
+}
+
+// create a "loop" that will go through an "array" of NFTs
+// and print their metadata with console.log()
+function listNFTs() {
+    nfts.forEach(nft => {
+        console.log("Name: " + nft.name);
+        console.log("Artist: " + nft.artist);
+        console.log("Year: " + nft.year);
+        console.log("Description: " + nft.description);
+        console.log("--------------------");
+    });
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+    return nfts.length;
+}
+
+// call your functions below this line
+mintNFT("Mona Lisa", "Leonardo da Vinci", 1503, "A portrait painting by Italian artist Leonardo da Vinci.");
+mintNFT("The Starry Night", "Vincent van Gogh", 1889, "A famous painting by Dutch post-impressionist painter Vincent van Gogh.");
+mintNFT("The Persistence of Memory", "Salvador Dalí", 1931, "A surreal painting by Salvador Dalí.");
+
+listNFTs();
+console.log("Total Supply: " + getTotalSupply());
